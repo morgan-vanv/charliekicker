@@ -20,7 +20,8 @@ public interface CharlieKickerConfig extends Config
 	@ConfigItem(
 			keyName = "message",
 			name = "Kick Message",
-			description = "The message that is sent when kicking Charlie"
+			description = "The message that is sent when kicking Charlie",
+			section = generalSettings
 	)
 	default String message()
 	{
