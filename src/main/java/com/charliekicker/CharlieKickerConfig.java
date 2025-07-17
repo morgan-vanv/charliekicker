@@ -3,17 +3,27 @@ package com.charliekicker;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
+import net.runelite.client.config.ConfigSection;
 
-@ConfigGroup("example")
+@ConfigGroup("general")
 public interface CharlieKickerConfig extends Config
 {
-	@ConfigItem(
-		keyName = "greeting",
-		name = "Welcome Greeting",
-		description = "The message to show to the user when they login"
+	// GENERAL SETTINGS
+	@ConfigSection(
+			name = "General Settings",
+			description = "General Settings",
+			position = 0,
+			closedByDefault = false
 	)
-	default String greeting()
+	String generalSettings = "generalSettings";
+
+	@ConfigItem(
+			keyName = "message",
+			name = "Kick Message",
+			description = "The message that is sent when kicking Charlie"
+	)
+	default String message()
 	{
-		return "Hello";
+		return "I hate you and your dumb clue scrolls Charlie! Take this!!";
 	}
 }
