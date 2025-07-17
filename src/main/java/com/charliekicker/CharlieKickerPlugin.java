@@ -23,10 +23,6 @@ import net.runelite.client.menus.MenuManager;
 // getType = 1003
 // getIdentifier = 26381
 
-// TODO:
-// 1. make the message appear above player's head
-
-
 public class CharlieKickerPlugin extends Plugin
 {
 
@@ -75,10 +71,10 @@ public class CharlieKickerPlugin extends Plugin
 
 	private void executeKick() {
 		Player local = client.getLocalPlayer();
-		client.playSoundEffect(2565);
-		local.setAnimation(423);
+		client.playSoundEffect(2565); // sound effect for kicking
+		local.setAnimation(423);  // animation for kicking
 		local.setActionFrame(0);
-		// TODO: make this an above head chat message
+		local.setOverheadText(config.message());
 		client.addChatMessage(ChatMessageType.PUBLICCHAT, local.getName(), config.message(), null);
 		log.info("Kick executed.");
 		// Reset the kick queue
