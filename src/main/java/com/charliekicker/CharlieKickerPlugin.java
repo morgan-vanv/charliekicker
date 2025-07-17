@@ -30,9 +30,6 @@ public class CharlieKickerPlugin extends Plugin
 	private Client client;
 
 	@Inject
-	private Provider<MenuManager> menuManager;
-
-	@Inject
 	private CharlieKickerConfig config;
 
 	private boolean isKickQueued;
